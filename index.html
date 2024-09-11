@@ -15,31 +15,67 @@
 
 <body>
 
-  Reliable, efficient delivery
-  Powered by Technology
+  <main class="container"> <!--container will have the bg color and height + padding-->
 
-  Our Artificial Intelligence powered tools use millions of project data points
-  to ensure that your project is successful
+    <section>
+      <!--23.4px convert to rem to have delivery not wrap onto the next line on small 320px screens
+      (or simply consider using text-wrap no wrap for this h2)-->
+      <h2 class="section__title--light">
+        Reliable, efficient delivery </h2>
 
-  Supervisor
-  Monitors activity to identify project roadblocks
+      <h2 class="section__title--bold">
+        Powered by Technology </h2>
 
-  Team Builder
-  Scans our talent network to create the optimal team for your project
+      <p class="section__info light-text">
+        Our Artificial Intelligence powered tools use millions of project data points
+        to ensure that your project is successful
+      </p>
 
-  Karma
-  Regularly evaluates our talent to ensure quality
+      <div class="grid-container">
 
-  Calculator
-  Uses data from past projects to provide better delivery estimates
+        <div class="card">
+          <h3 class="card__title">Supervisor</h3>
+          <p class="card__text">Monitors activity to identify project roadblocks</p>
+          <!--adding width/height attributes-->
+          <img class="card__image" src="images/icon-supervisor.svg" width="50" height="50"
+            alt="magnifying glass with eye inside">
+        </div>
+
+        <div class="card">
+          <h3 class="card__title">Team Builder</h3>
+          <p class="card__text">Scans our talent network to create the optimal team for your project</p>
+          <!--adding width/height attributes-->
+          <img class="card__image" src="images/icon-team-builder.svg" width="50" height="50" alt="house icon">
+        </div>
+
+        <div class="card">
+          <h3 class="card__title">Karma</h3>
+          <p class="card__text">Regularly evaluates our talent to ensure quality</p>
+          <!--adding width/height attributes-->
+          <img class="card__image" src="images/icon-karma.svg" width="50" height="50" alt="lit light bulb">
+        </div>
+
+        <div class="card">
+          <h3 class="card__title">Calculator</h3>
+          <p class="card__text">Uses data from past projects to provide better delivery estimates</p>
+          <!--adding width/height attributes-->
+          <img class="card__image" src="images/icon-calculator.svg" width="50" height="50" alt="laptop">
+        </div>
+
+      </div>
+    </section>
 
 
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
+    <!--changed footer to div, since everything will be inside of the container which is my main element
+     it doesn't make sense to have a footer inside of main
+    -->
+    <div class="attribution">
+      <p>
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </div>
+  </main>
 </body>
 
 </html>
