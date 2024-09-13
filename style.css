@@ -32,10 +32,14 @@ html,
 body,
 .container {
   /*container should take up the whole page and never be below 100% of viewport height(same as min-height) */
-  min-block-size: 100%;
+  min-height: 100%; /*for desktop switch to height:100%; */
 }
 .light-text {
   font-weight: 100; /*all paragraph text should be very light */
+}
+
+section p {
+  font-size: 0.75rem; /*paragraph text should compute to 15px */
 }
 
 /*---------------------------------------CONTAINER STYLES------------------------- */
@@ -54,14 +58,14 @@ and the last word DOES NOT  wrap onto the next line
 */
 
 h2 {
-  text-wrap: nowrap;
-
   font-size: clamp(
     1rem,
-    0.9rem + 1.5vw,
+    0.8rem + 1.5vw,
     2rem
   ); /*the h2 text will scale based on vw
   it wont go below 1rem( which computes to 20px) or above 2 rem( which computes to 40px) */
+
+  /* font-size: 0.95rem; */
 }
 h2.section__title--light {
   font-weight: 200; /*the h2 thats lighter should be a bit more bold than the paragraphs */
@@ -70,12 +74,61 @@ h2.section__title--bold {
   margin-block-end: 1rem; /*create space between second h2 and paragraph  */
   font-weight: 600; /*proper fw according to design specs */
 }
+
 p.section__info {
   margin-block-end: 2.75rem; /*creates  space below the paragraph  */
 }
 
+/*---------------------------------------CARD STYLES------------------------- */
+/*since each cards have a different border top i will first select each card with the following selector
+card.grid-items-1 card.grid-items-2 card.grid-items-3 card.grid-items-4
+*/
+
+.card {
+  margin: 1rem 0;
+  padding: 1em;
+  max-inline-size: 100%; /*same as setting max-width, make sure card does'nt overflow outside of its parent (grid container)  */
+  border-radius: 7px;
+
+  box-shadow: var(--grayish-blue) 0px 5px 15px; /*got box-shadow values from https://getcssscan.com/css-box-shadow-examples */
+
+  display: flex;
+  flex-direction: column;
+}
+
+h3.card__title {
+  font-size: clamp(
+    0.7rem,
+    0.7rem + 1.5vw,
+    1.8rem
+  ); /*the h3 card title should be a bit smaller than the h2 section title  */
+}
+
+/*each card's border-top has a diff color */
+.card.grid-item-1 {
+  border-top: 4px solid var(--cyan);
+}
+.card.grid-item-2 {
+  border-top: 4px solid var(--red);
+}
+.card.grid-item-3 {
+  border-top: 4px solid var(--orange);
+}
+.card.grid-item-4 {
+  border-top: 4px solid var(--blue);
+}
+.card__image {
+  margin-block-start: 1.25rem; /*add space above svg images */
+  align-self: flex-end; /*pushes the svg images all the way to the right */
+}
+
 /*---------------------------------------ATTRIBUTION STYLES------------------------- */
 .attribution {
+  /*if the attribution is a bit too close to the 4th card 
+    create some space between the two
+    so i might uncomment this line in the future
+  */
+  /* padding-block-start: 1em; */
   font-size: 11px;
   text-align: center;
 }
