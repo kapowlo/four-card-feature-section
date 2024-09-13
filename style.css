@@ -32,7 +32,7 @@ html,
 body,
 .container {
   /*container should take up the whole page and never be below 100% of viewport height(same as min-height) */
-  min-height: 100%; /*for desktop switch to height:100%; */
+  min-block-size: 100%;
 }
 .light-text {
   font-weight: 100; /*all paragraph text should be very light */
@@ -44,18 +44,12 @@ section p {
 
 /*---------------------------------------CONTAINER STYLES------------------------- */
 .container {
-  border: 2px solid darkcyan;
+  border: 8px solid darkcyan;
   background-color: var(--very-light-gray);
   padding: 3.25em 1.5em;
 }
 
 /*---------------------------------------SECTION STYLES------------------------- */
-/*  ##important for the h2 texts I want to have more control over the font-size so i wont be using clamp() 
-this is because i want the FOLLOWING TEXT " Reliable, efficient delivery" on one line i don't want it to wrap. 
-I'll try setting no-wrap on it, but if it does'nt work or it messes with the layout or w/e 
-then ill make the h2 text equal to 23.4px in rem cuz thats the size at which the h2 text is all in one line 
-and the last word DOES NOT  wrap onto the next line
-*/
 
 h2 {
   font-size: clamp(
@@ -64,8 +58,6 @@ h2 {
     2rem
   ); /*the h2 text will scale based on vw
   it wont go below 1rem( which computes to 20px) or above 2 rem( which computes to 40px) */
-
-  /* font-size: 0.95rem; */
 }
 h2.section__title--light {
   font-weight: 200; /*the h2 thats lighter should be a bit more bold than the paragraphs */
@@ -80,9 +72,6 @@ p.section__info {
 }
 
 /*---------------------------------------CARD STYLES------------------------- */
-/*since each cards have a different border top i will first select each card with the following selector
-card.grid-items-1 card.grid-items-2 card.grid-items-3 card.grid-items-4
-*/
 
 .card {
   margin: 1rem 0;
@@ -136,3 +125,7 @@ h3.card__title {
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+/*---------------------------------------MEDIA QUERIES---------------------------------------------- */
+/*first breakpoint will be 800px+ because at that screen size the cards stretch too much
+and there's enough room to setup the grid */
