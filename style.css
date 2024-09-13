@@ -27,6 +27,53 @@
 body {
   font-family: "Poppins", sans-serif; /*by default this font family has a bold font(will need to be removed on most texts) */
 }
+
+html,
+body,
+.container {
+  /*container should take up the whole page and never be below 100% of viewport height(same as min-height) */
+  min-block-size: 100%;
+}
+.light-text {
+  font-weight: 100; /*all paragraph text should be very light */
+}
+
+/*---------------------------------------CONTAINER STYLES------------------------- */
+.container {
+  border: 2px solid darkcyan;
+  background-color: var(--very-light-gray);
+  padding: 3.25em 1.5em;
+}
+
+/*---------------------------------------SECTION STYLES------------------------- */
+/*  ##important for the h2 texts I want to have more control over the font-size so i wont be using clamp() 
+this is because i want the FOLLOWING TEXT " Reliable, efficient delivery" on one line i don't want it to wrap. 
+I'll try setting no-wrap on it, but if it does'nt work or it messes with the layout or w/e 
+then ill make the h2 text equal to 23.4px in rem cuz thats the size at which the h2 text is all in one line 
+and the last word DOES NOT  wrap onto the next line
+*/
+
+h2 {
+  text-wrap: nowrap;
+
+  font-size: clamp(
+    1rem,
+    0.9rem + 1.5vw,
+    2rem
+  ); /*the h2 text will scale based on vw
+  it wont go below 1rem( which computes to 20px) or above 2 rem( which computes to 40px) */
+}
+h2.section__title--light {
+  font-weight: 200; /*the h2 thats lighter should be a bit more bold than the paragraphs */
+}
+h2.section__title--bold {
+  margin-block-end: 1rem; /*create space between second h2 and paragraph  */
+  font-weight: 600; /*proper fw according to design specs */
+}
+p.section__info {
+  margin-block-end: 2.75rem; /*creates  space below the paragraph  */
+}
+
 /*---------------------------------------ATTRIBUTION STYLES------------------------- */
 .attribution {
   font-size: 11px;
