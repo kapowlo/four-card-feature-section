@@ -75,7 +75,7 @@ p.section__info {
 
 .card {
   margin: 1rem 0;
-  padding: 1em;
+  padding: 1.5em;
   max-inline-size: 100%; /*same as setting max-width, make sure card does'nt overflow outside of its parent (grid container)  */
   border-radius: 7px;
 
@@ -137,7 +137,7 @@ so instead ill make a 2 by 2 grid
     text-align: center;
   }
   .section__info {
-    max-inline-size: 70%;
+    max-inline-size: 60ch;
     margin: 0 auto;
   }
   .grid-container {
