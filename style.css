@@ -141,6 +141,7 @@ so instead ill make a 2 by 2 grid
     margin: 0 auto;
   }
   .grid-container {
+    margin: 0 auto;
     border: 2px solid firebrick;
 
     display: grid;
@@ -168,6 +169,18 @@ so instead ill make a 2 by 2 grid
 
 /*at this screen size i can replicate the layout from the design specs */
 @media screen and (min-width: 1000px) {
+  .grid-container {
+    /*stops cards from getting too big by reducing the width of their direct parent (grid-container */
+    max-inline-size: 1200px;
+
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em; /*increased the col and row gap just a bit */
+  }
+
+  .card {
+    padding-block-end: 2.15em; /*increase padding bottom  */
+  }
+
   .grid-item-3,
   .grid-item-1,
   .grid-item-4 {
@@ -179,10 +192,6 @@ so instead ill make a 2 by 2 grid
     margin-block-end: 0; /*removes margin below team builder card but makes that card bigger  */
   }
 
-  .grid-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5em; /*increased the col and row gap just a bit */
-  }
   .grid-item-1 {
     grid-column: 1/1;
     grid-row: 2/2;
@@ -201,4 +210,19 @@ so instead ill make a 2 by 2 grid
     /*both grid items will be moved up by 50% */
     transform: translateY(-50%);
   }
+
+  h3.card__title {
+    /*due to the way the layout changes at this screen size I reduced the font-size
+    of the card titles
+    */
+    font-size: 1.25rem;
+  }
+
+  .card__image {
+    /*increase size of svg images  */
+    height: 3.5em;
+    width: 3.5em;
+  }
 }
+/*TO DO: at very larger screen size the cards get way too big i need to limit their width 
+inside of my 1000px media query */
