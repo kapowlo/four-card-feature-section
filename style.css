@@ -141,7 +141,6 @@ so instead ill make a 2 by 2 grid
     margin: 0 auto;
   }
   .grid-container {
-    margin: 0 auto;
     border: 2px solid firebrick;
 
     display: grid;
@@ -172,6 +171,8 @@ so instead ill make a 2 by 2 grid
   .grid-container {
     /*stops cards from getting too big by reducing the width of their direct parent (grid-container */
     max-inline-size: 1200px;
+
+    margin: 0 auto; /*now that the container has a width i must make sure its centered horizontally  */
 
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5em; /*increased the col and row gap just a bit */
