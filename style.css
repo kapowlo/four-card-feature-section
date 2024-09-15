@@ -24,16 +24,11 @@
 }
 
 /*GENERAL STYLES + BODY STYLES */
+
 body {
   font-family: "Poppins", sans-serif; /*by default this font family has a bold font(will need to be removed on most texts) */
 }
 
-html,
-body,
-.container {
-  /*container should take up the whole page and never be below 100% of viewport height(same as min-height) */
-  min-block-size: 100%;
-}
 .light-text {
   font-weight: 100; /*all paragraph text should be very light */
 }
@@ -44,6 +39,11 @@ section p {
 
 /*---------------------------------------CONTAINER STYLES------------------------- */
 .container {
+  /*equivalent of min-height but based on writing mode, 
+  this fixes the issue where my container was not taking up the full page.
+  */
+  min-block-size: 100vh;
+
   border: 8px solid darkcyan;
   background-color: var(--very-light-gray);
   padding: 3.25em 1.5em;
