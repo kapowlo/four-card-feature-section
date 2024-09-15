@@ -52,6 +52,8 @@ section p {
 /*---------------------------------------SECTION STYLES------------------------- */
 
 h2 {
+  text-wrap: nowrap;
+  text-align: center;
   font-size: clamp(
     1rem,
     0.8rem + 1.5vw,
@@ -69,6 +71,13 @@ h2.section__title--bold {
 
 p.section__info {
   margin-block-end: 2.75rem; /*creates  space below the paragraph  */
+  max-width: 60ch; /*limit number of character for paragraph*/
+
+  /*centers the paragraph horizontally */
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+
+  text-align: center; /*aligns the second sentence of the paragraph with the first one */
 }
 
 /*---------------------------------------CARD STYLES------------------------- */
@@ -136,10 +145,7 @@ so instead ill make a 2 by 2 grid
   .section__info {
     text-align: center;
   }
-  .section__info {
-    max-inline-size: 60ch;
-    margin: 0 auto;
-  }
+
   .grid-container {
     border: 2px solid firebrick;
 
