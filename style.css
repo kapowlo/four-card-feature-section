@@ -70,12 +70,15 @@ h2.section__title--bold {
 }
 
 p.section__info {
-  margin-block-end: 2.75rem; /*creates  space below the paragraph  */
-  max-width: 60ch; /*limit number of character for paragraph*/
+  margin-block-end: 2.75rem; /*creates space below the paragraph  */
+  max-inline-size: 60ch; /*limit number of character for paragraph*/
 
   /*centers the paragraph horizontally */
   margin-inline-start: auto;
   margin-inline-end: auto;
+  /*adding fallback cuz 66% global usage rate according to caniuse.com */
+  margin-left: auto;
+  margin-right: auto;
 
   text-align: center; /*aligns the second sentence of the paragraph with the first one */
 }
@@ -225,5 +228,3 @@ so instead ill make a 2 by 2 grid
     width: 3em;
   }
 }
-/*TO DO: at very larger screen size the cards get way too big i need to limit their width 
-inside of my 1000px media query */
