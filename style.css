@@ -44,7 +44,7 @@ section p {
   */
   min-block-size: 100vh;
 
-  border: 8px solid darkcyan;
+  border: 4px solid rebeccapurple;
   background-color: var(--very-light-gray);
   padding: 3.25em 1.5em;
 }
@@ -147,8 +147,6 @@ so instead ill make a 2 by 2 grid
   }
 
   .grid-container {
-    border: 2px solid firebrick;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr 1fr;
@@ -182,10 +180,6 @@ so instead ill make a 2 by 2 grid
 
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5em; /*increased the col and row gap just a bit */
-  }
-
-  .card {
-    padding-block-end: 2.15em; /*increase padding bottom  */
   }
 
   .grid-item-3,
@@ -227,8 +221,8 @@ so instead ill make a 2 by 2 grid
 
   .card__image {
     /*increase size of svg images  */
-    height: 3.5em;
-    width: 3.5em;
+    height: 3em;
+    width: 3em;
   }
 }
 /*TO DO: at very larger screen size the cards get way too big i need to limit their width 
