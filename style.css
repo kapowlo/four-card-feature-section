@@ -80,6 +80,8 @@ p.section__info {
   margin-right: auto;
 
   text-align: center; /*aligns the second sentence of the paragraph with the first one */
+
+  line-height: 1.8;
 }
 
 /*---------------------------------------CARD STYLES------------------------- */
@@ -97,11 +99,14 @@ p.section__info {
 }
 
 h3.card__title {
+  margin-block-end: 0.31rem;
+
   font-size: clamp(
     0.7rem,
     0.7rem + 1.5vw,
     1.8rem
   ); /*the h3 card title should be a bit smaller than the h2 section title  */
+  font-weight: 500;
 }
 
 /*each card's border-top has a diff color */
@@ -117,6 +122,11 @@ h3.card__title {
 .card.grid-item-4 {
   border-top: 4px solid var(--blue);
 }
+
+.card__text {
+  line-height: 1.8;
+}
+
 .card__image {
   margin-block-start: 1.25rem; /*add space above svg images */
   align-self: flex-end; /*pushes the svg images all the way to the right */
@@ -176,12 +186,15 @@ so instead ill make a 2 by 2 grid
 @media screen and (min-width: 1000px) {
   .grid-container {
     /*stops cards from getting too big by reducing the width of their direct parent (grid-container */
-    max-inline-size: 1200px;
+    max-inline-size: 1000px; /*reduced from 1200px to 1000px */
 
     margin: 0 auto; /*now that the container has a width i must make sure its centered horizontally  */
 
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5em; /*increased the col and row gap just a bit */
+    gap: 1.75em; /*increased the col and row gap just a bit */
+  }
+  .card {
+    padding: 2em; /*add a bit of padding to card  */
   }
 
   .grid-item-3,
